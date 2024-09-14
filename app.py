@@ -71,7 +71,7 @@ def get_payments():
         'payment_method': p.payment_method
     } for p in payments])
 
-#Route to add a new customer
+#Route to add a new category
 @app.route('/addCat', methods=['POST']) #7th endpoint with POST REQUEST(you need postman or cURL)
 def create_category():
     data = request.get_json() #Retrieves the JSON data sent in the body of the POST request and parses it into a Python dictionary.
