@@ -1,8 +1,8 @@
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
-class Category(db.Model):
-    __tablename__ = 'categories'
-    category_id = db.Column(db.Integer, primary_key=True)
+from flask_sqlalchemy import SQLAlchemy #import sql library
+db = SQLAlchemy() #is an instance of the SQLAlchemy class from the flask_sqlalchemy package.
+class Category(db.Model): #create first table as class
+    __tablename__ = 'categories' #choose a name like in your db
+    category_id = db.Column(db.Integer, primary_key=True) #first attribute(column)+(type,constraint)
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
 
