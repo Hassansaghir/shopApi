@@ -4,5 +4,5 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 #If you're using Windows Authentication,
-you might not need to specify a username and password in the connection string. 
-Instead, you can use Trusted_Connection=yes in your connection string.
+#you might not need to specify a username and password in the connection string. 
+#Instead, you can use Trusted_Connection=yes in your connection string.
