@@ -72,19 +72,16 @@ def get_payments():
     } for p in payments])
 
 #Route to add a new customer
-@app.route('/customers', methods=['POST']) #7th endpoint with POST REQUEST(you need postman or cURL)
-def create_customer():
+@app.route('/addCat', methods=['POST']) #7th endpoint with POST REQUEST(you need postman or cURL)
+def create_category():
     data = request.get_json() #Retrieves the JSON data sent in the body of the POST request and parses it into a Python dictionary.
-    new_customer = Customer( #Creates a new instance of the Customer model with the data extracted from the request.
-        first_name=data['first_name'],
-        last_name=data['last_name'],
-        email=data['email'],
-        phone=data.get('phone'),
-        address=data.get('address')
+    new_category = Category( #Creates a new instance of the Customer model with the data extracted from the request.
+        name=data['name'],
+        description=data["description"]
     )
-    db.session.add(new_customer) #it is scheduled to be inserted into the database when the session is committed.
+    db.session.add(new_category) #it is scheduled to be inserted into the database when the session is committed.
     db.session.commit() #Commits the transaction to the database
-    return jsonify({'message': 'Customer created successfully'}), 201 #Returns a JSON response to the client indicating that the customer was created successfully
+    return jsonify({'message': 'category created created successfully'}), 201 #Returns a JSON response to the client indicating that the customer was created successfully
 
 if __name__ == '__main__': #block in Python is used to execute some code only when the script is run directly, not when it is imported as a module.
     app.run(debug=True)
